@@ -1,3 +1,4 @@
+//not finished.
 package vaje2;
 
 import java.util.Scanner;
