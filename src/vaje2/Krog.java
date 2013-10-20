@@ -1,17 +1,24 @@
-package vaje2;
-
 import java.util.Scanner;
 
-public class Krog {
-
-	public static void main(String[] args) {
-		Scanner beri = new Scanner(System.in);
-		int r;
-		r = beri.nextInt();
-		for (int i = 0; i <= (2 * r); i++) {
-			
-		}
-
-	}
-
+class Circle
+{
+    public static void main(String[] args)
+    {
+        Scanner scan = new Scanner(System.in);
+        
+        int r = scan.nextInt();
+        
+        for(int y = -r; y < r; y++)
+        {
+            int size = (int)Math.sqrt(r*r - y*y);
+            
+            for(int j = r - size - 1; j >= 0; j--)
+                System.out.print(" ");
+            
+            for(int j = 0; j < size*2; j++)
+                System.out.print("*");
+            
+            System.out.print("\n");
+        }        
+    }
 }
