@@ -33,7 +33,7 @@ public class Naloga1 {
 		int prev = t[k][0];
 		for(int i = 1; i < t[k].length; i++) {
 			if(prev == 0 && t[k][i] < 0
-				&& isPositive(prev) && !isPositive(t[k][i])
+				|| isPositive(prev) && !isPositive(t[k][i])
 					|| !isPositive(prev) && isPositive(t[k][i])) {
 				change++;
 			}
@@ -48,12 +48,19 @@ public class Naloga1 {
 	
 	private static int najZapNar(int[][] t, int k) {
 		int length = 0;
+		int max = length;
 		for(int i = 0; i < t[k].length; i++) {
 			if( t[k][i] > 0) {
 				length++;
 			} else {
+				if(length > max) {
+					max = length;
+				}
 				length = 0;
 			}
+		}
+		if(length > max) {
+			max = length;
 		}
 		return length;
 	}
